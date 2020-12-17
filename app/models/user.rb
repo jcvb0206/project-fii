@@ -7,6 +7,8 @@ class User < ApplicationRecord
   private
 
   def email_institucional
-    return if email.match(/^(.+)\.(.+)@unmsm.edu.pe$/)
+    return if email.nil? || email.match(/^(.+)\.(.+)@unmsm.edu.pe$/)
+
+    errors.add(:email, 'no pertenece a UNMSM')
   end
 end

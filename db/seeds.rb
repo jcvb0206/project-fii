@@ -18,8 +18,7 @@ User.destroy_all
     last_name: last_name,
     email: "#{first_name.downcase}.#{last_name.downcase}@unmsm.edu.pe",
     password: "#{first_name.downcase}#{last_name.downcase}#{rand(1..100)}",
-    state: rand(0..2),
-    admin: false
+    state: rand(0..2)
   }
   User.create(user_data)
 end
