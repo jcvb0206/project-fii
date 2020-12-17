@@ -1,0 +1,20 @@
+<h1>Usuario #<%=@user.id%></h1>
+<ul>
+    <table style="width:100%">
+      <tr>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Email</th>
+        <th>Estado</th>
+        <th>¿Es admin?</th>
+      </tr>
+      <tr>
+        <td><%= @user.first_name %></td>
+        <td><%= @user.last_name %></td>
+        <td><%= @user.email %></td>
+        <td><%= @user.state %></td>
+        <td><%= @user.admin %></td>
+      </tr>
+    </table> 
+</ul>
+<p>Find me in app/views/users/index.html.erb</p>

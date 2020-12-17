@@ -1,0 +1,18 @@
+<h1>Usuarios</h1>
+<ul>
+    <table style="width:100%">
+      <tr>
+        <th>id</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+      </tr>
+      <% @users.each do |user| %>
+      <tr>
+        <td><a href="/usuarios/<%= user.id %>"><%= user.id %></td>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+      </tr>
+      <% end %>
+    </table> 
+</ul>
+<p>Find me in app/views/users/index.html.erb</p>
