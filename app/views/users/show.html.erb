@@ -18,4 +18,7 @@
     </table> 
 </ul>
 <%= link_to 'Editar', edit_user_path(@user) %> |
+<%= link_to "Eliminar", user_path(@user),
+                  method: :delete,
+                  data: { confirm: "¿Estás seguro?" } %> | 
 <%= link_to 'Regresar', users_path %>

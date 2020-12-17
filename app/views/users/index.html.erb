@@ -3,7 +3,7 @@
 <ul>
     <table style="width:100%">
       <tr>
-        <th>id</th>
+        <th>ID</th>
         <th>Nombres</th>
         <th>Apellidos</th>
       </tr>
@@ -14,6 +14,9 @@
         <td><%= user.last_name %></td>
         <td><a href="/users/<%= user.id %>">Ver</td>
         <td><a href="/users/<%= user.id %>/edit">Editar</td>
+        <td><%= link_to "Eliminar", user_path(user),
+                  method: :delete,
+                  data: { confirm: "¿Estás seguro?" } %></td>
       </tr>
       <% end %>
     </table> 
