@@ -1,0 +1,28 @@
+<h1>Cursos</h1>
+<%= link_to "Crear nuevo curso", new_course_path %>
+<ul>
+    <table style="width:100%">
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Ciclo</th>
+        <th>Plan</th>
+        <th>Credtitos</th>
+      </tr>
+      <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.id %></td>
+        <td><%= course.name %></td>
+        <td><%= course.cicle %></td>
+        <td><%= course.plan %></td>
+        <td><%= course.credits %></td>
+        <td><a href="/courses/<%= course.id %>">Ver</td>
+        <td><a href="/courses/<%= course.id %>/edit">Editar</td>
+        <td><%= link_to "Eliminar", course_path(course),
+                  method: :delete,
+                  data: { confirm: "¿Estás seguro?" } %></td>
+      </tr>
+      <% end %>
+    </table> 
+</ul>
+<p>Find me in app/views/users/index.html.erb</p>

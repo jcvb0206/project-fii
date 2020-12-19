@@ -1,0 +1,35 @@
+<h1>Nuevo Usuario</h1>
+<%= form_with scope: :course, url: courses_path, local: true do |form| %>
+<% if @course.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@course.errors.count, "error") %> errores evitan crear tu usuario:
+    </h2>
+    <ul>
+      <% @course.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :cicle %><br>
+    <%= form.text_field :cicle %>
+  </div>
+  <div>
+    <%= form.label :plan %><br>
+    <%= form.text_field :plan %>
+  </div>
+  <div>
+    <%= form.label :credits %><br>
+    <%= form.text_field :credits %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+<%= link_to 'Regresar', courses_path %>
